@@ -1,8 +1,38 @@
 # Json::Schema::Generator::Rough
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/json/schema/generator/rough`. To experiment with that code, run `bin/console` for an interactive prompt.
+Rough JSON schema generator in ruby.
 
-TODO: Delete this and the text above, and describe your gem
+## Features
+
+* Multiple JSONs into single JSON schema
+* Extract the schema of object values by JSON Path for `patternProperties`
+* Extract the enumerated values by JSON Path
+* Detect required object keys
+
+## Usage
+
+With `json-schema-generator-rough` command:
+
+```
+$ json-schema-generator-rough \
+  --pattern-properties \
+    '$.operations.*' \
+    '$.shapes.*' \
+    '$.shapes.*.members' \
+  /path/to/one.json \
+  /path/to/another.json
+```
+
+Or in your ruby script:
+
+```ruby
+require 'json-schema-generator-rough'
+
+generator = JSON::SchemaGenerator::Rough.new
+schema = generator.generate(json_str)
+
+puts JSON.pretty_generate JSON.parse(schema)
+```
 
 ## Installation
 
@@ -20,9 +50,6 @@ Or install it yourself as:
 
     $ gem install json-schema-generator-rough
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
