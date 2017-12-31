@@ -1,4 +1,4 @@
-# Json::Schema::Generator::Rough
+# JSON::SchemaGenerator::Rough
 
 Rough JSON schema generator in ruby.
 
