@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+$:.unshift(File.join(__dir__, '..', 'lib'))
+require 'optparse'
+require 'json-schema-generator-rough'
+
+def main
+  options = {}
+  parser = OptionParser.new do |o|
+  end.parse!
+
+  jsons = ARGV.map {|path| File.read(path) }
+  generator = JSON::SchemaGenerator::Rough.new
+  generator.generate_for(jsons, options)
+end
+
+main

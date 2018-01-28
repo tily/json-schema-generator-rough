@@ -1,16 +1,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "json/schema/generator/rough/version"
+require "json/schema_generator/rough/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "json-schema-generator-rough"
-  spec.version       = Json::Schema::Generator::Rough::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.version       = JSON::SchemaGenerator::Rough::VERSION
+  spec.authors       = ["tily"]
+  spec.email         = ["tidnlyam@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Rough JSON schema generator}
+  spec.description   = %q{Rough JSON schema generator}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
